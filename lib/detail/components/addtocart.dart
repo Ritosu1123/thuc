@@ -15,7 +15,7 @@ class AddProductToCart extends StatefulWidget {
 class _AddProductToCartState extends State<AddProductToCart> {
 
   @override
-  void initSate() {
+  void initState() {
     super.initState();
   }
 
@@ -23,20 +23,14 @@ class _AddProductToCartState extends State<AddProductToCart> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 50,
-      width: MediaQuery
-          .of(context)
-          .size
-          .width,
+      width: MediaQuery.of(context).size.width,
       child: RaisedButton(
         onPressed: () {
           Cart cart = Cart();
           cart.addProductToCart(widget.product);
-          print(cart
-              .getCart()
-              .length
-              .toString());
+          print(cart.getCart().length.toString());
           Fluttertoast.showToast(
-              msg: "Add to cast",
+              msg: "Add to cart",
               toastLength: Toast.LENGTH_SHORT,
               gravity: ToastGravity.BOTTOM,
               timeInSecForIosWeb: 1,
@@ -51,7 +45,9 @@ class _AddProductToCartState extends State<AddProductToCart> {
         child: Text("Add to cart", style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
-            color: Colors.white),),),
+            color: Colors.white),
+        ),
+      ),
     );
   }
 }
