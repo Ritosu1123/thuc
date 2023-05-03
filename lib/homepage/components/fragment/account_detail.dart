@@ -9,6 +9,9 @@ class AccountDetail extends StatefulWidget {
 
 class _AccountDetailState extends State<AccountDetail> {
   final email = TextEditingController();
+  final password = TextEditingController();
+  final conform = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -31,21 +34,21 @@ class _AccountDetailState extends State<AccountDetail> {
           SizedBox(
             height: 50,
             width: MediaQuery.of(context).size.width,
-            child: Raisebutton(
-                onPressed: () {
-                  Navigator.pop(context, email.text);
-                },
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  color: Colors.green,
-                  child: Text(
-                    "Continue",
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  ),
-                )),
+            child: RaisedButton(
+              onPressed: () {
+                Navigator.pop(context, email.text);
+              },
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              color: Colors.green,
+              child: Text(
+                "Continue",
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+            ),
           ),
           SizedBox(
             height: 30,
@@ -107,7 +110,7 @@ class _AccountDetailState extends State<AccountDetail> {
 
   TextFormField conformTextFormField() {
     return TextFormField(
-      controller: email,
+      controller: conform,
       decoration: InputDecoration(
         border: OutlineInputBorder(),
         hintText: "Re-enter your password",

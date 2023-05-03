@@ -58,10 +58,12 @@ class _SignUpFormState extends State<SignUpForm> {
                           User(username: email.text, password: conform.text));
                     }*/
                 },
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  primary: Colors.green,
                 ),
-                color: Colors.green,
                 child: Text(
                   "Continue",
                   style: TextStyle(
@@ -112,7 +114,7 @@ class _SignUpFormState extends State<SignUpForm> {
       ),
     );
   }
-
+  
   TextFormField emailTextFormField() {
     return TextFormField(
       controller: email,
