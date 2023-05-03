@@ -23,12 +23,18 @@ class _AddProductToCartState extends State<AddProductToCart> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 50,
-      width: MediaQuery.of(context).size.width,
-      child: RaisedButton(
+      width: MediaQuery
+          .of(context)
+          .size
+          .width,
+      child: ElevatedButton(
         onPressed: () {
           Cart cart = Cart();
           cart.addProductToCart(widget.product);
-          print(cart.getCart().length.toString());
+          print(cart
+              .getCart()
+              .length
+              .toString());
           Fluttertoast.showToast(
               msg: "Add to cart",
               toastLength: Toast.LENGTH_SHORT,
@@ -39,15 +45,15 @@ class _AddProductToCartState extends State<AddProductToCart> {
               fontSize: 16.0
           );
         },
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10)),
-        color: Colors.green,
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10)),
+          primary: Colors.green,
+        ),
         child: Text("Add to cart", style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
-            color: Colors.white),
-        ),
-      ),
+            color: Colors.white),),),
     );
   }
 }
