@@ -34,13 +34,14 @@ class _AccountDetailState extends State<AccountDetail> {
           SizedBox(
             height: 50,
             width: MediaQuery.of(context).size.width,
-            child: RaisedButton(
+            child: ElevatedButton(
               onPressed: () {
                 Navigator.pop(context, email.text);
               },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              color: Colors.green,
+              style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
+                  primary: Colors.green),
               child: Text(
                 "Continue",
                 style: TextStyle(
